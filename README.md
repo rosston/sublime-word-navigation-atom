@@ -1,4 +1,4 @@
-# sublime-word-navigation package
+# Sublime Word Navigation
 
 Sublime Text and native-style word navigation with shortcuts.
 
