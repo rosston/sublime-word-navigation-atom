@@ -1,3 +1,6 @@
+## 0.1.2
+* Fixed bug where no word navigation was available in mini editors (e.g., find and replace)
+
 ## 0.1.1
 * Added installation instructions to README
 
