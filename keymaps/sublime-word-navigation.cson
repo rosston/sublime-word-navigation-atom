@@ -1,4 +1,4 @@
-'atom-text-editor':
+'atom-text-editor:not([mini])':
   'alt-b': 'sublime-word-navigation:move-to-beginning-of-word'
   'alt-f': 'sublime-word-navigation:move-to-end-of-word'
   'alt-B': 'sublime-word-navigation:select-to-beginning-of-word'
@@ -6,7 +6,7 @@
   'alt-h': 'sublime-word-navigation:delete-to-beginning-of-word'
   'alt-d': 'sublime-word-navigation:delete-to-end-of-word'
 
-'.platform-darwin atom-text-editor':
+'.platform-darwin atom-text-editor:not([mini])':
   'alt-left': 'sublime-word-navigation:move-to-beginning-of-word'
   'alt-right': 'sublime-word-navigation:move-to-end-of-word'
   'alt-shift-left': 'sublime-word-navigation:select-to-beginning-of-word'
@@ -14,7 +14,7 @@
   'alt-backspace': 'sublime-word-navigation:delete-to-beginning-of-word'
   'alt-delete': 'sublime-word-navigation:delete-to-end-of-word'
 
-'.platform-linux atom-text-editor':
+'.platform-linux atom-text-editor:not([mini])':
   'ctrl-left': 'sublime-word-navigation:move-to-beginning-of-word'
   'ctrl-right': 'sublime-word-navigation:move-to-end-of-word'
   'ctrl-shift-left': 'sublime-word-navigation:select-to-beginning-of-word'
@@ -22,7 +22,7 @@
   'ctrl-backspace': 'sublime-word-navigation:delete-to-beginning-of-word'
   'ctrl-delete': 'sublime-word-navigation:delete-to-end-of-word'
 
-'.platform-win32 atom-text-editor':
+'.platform-win32 atom-text-editor:not([mini])':
   'ctrl-left': 'sublime-word-navigation:move-to-beginning-of-word'
   'ctrl-right': 'sublime-word-navigation:move-to-end-of-word'
   'ctrl-shift-left': 'sublime-word-navigation:select-to-beginning-of-word'
