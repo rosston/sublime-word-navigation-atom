@@ -1,3 +1,6 @@
+## 0.2.0
+* Added support for multiple cursors
+
 ## 0.1.2
 * Fixed bug where no word navigation was available in mini editors (e.g., find and replace)
 

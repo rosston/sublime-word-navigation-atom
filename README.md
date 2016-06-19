@@ -2,7 +2,7 @@
 
 Sublime Text and native-style word navigation with shortcuts.
 
-Skips past non-word characters to beginning/end of next word. Brings word navigation in Atom closer to the style of Sublime Text and the underlying OS. Overrides Atom's default shortcuts for moving/selecting/deleting to beginning/end of word.
+Skips past non-word characters to beginning/end of next word. Brings word navigation in Atom closer to the style of Sublime Text and the underlying OS. Overrides Atom's default shortcuts for moving/selecting/deleting to beginning/end of word. Supports multiple cursors.
 
 Only overrides Atom's default word navigation in file editors. Atom's default word navigation remains for other text inputs (e.g., find and replace, command palette).
 
