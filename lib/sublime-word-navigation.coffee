@@ -22,14 +22,13 @@ module.exports = SublimeWordNavigation =
   getEditor: ->
     atom.workspace.getActiveTextEditor()
 
-  getCursor: ->
-    @getEditor().getLastCursor()
+  getCursors: ->
+    @getEditor().getCursors()
 
-  getSelection: ->
-    @getEditor().getLastSelection()
+  getSelections: ->
+    @getEditor().getSelections()
 
-  moveToBeginningOfWord: ->
-    cursor = @getCursor()
+  moveCursorToBeginningOfWord: (cursor) ->
     beginningOfWordPosition = cursor.getBeginningOfCurrentWordBufferPosition({
       includeNonWordCharacters: false
     })
@@ -41,8 +40,7 @@ module.exports = SublimeWordNavigation =
     else
       cursor.setBufferPosition(beginningOfWordPosition)
 
-  moveToEndOfWord: ->
-    cursor = @getCursor()
+  moveCursorToEndOfWord: (cursor) ->
     endOfWordPosition = cursor.getEndOfCurrentWordBufferPosition({
       includeNonWordCharacters: false
     })
@@ -54,20 +52,28 @@ module.exports = SublimeWordNavigation =
     else
       cursor.setBufferPosition(endOfWordPosition)
 
+  moveToBeginningOfWord: ->
+    @getCursors().forEach(@moveCursorToBeginningOfWord)
+
+  moveToEndOfWord: ->
+    @getCursors().forEach(@moveCursorToEndOfWord)
+
   selectToBeginningOfWord: ->
-    @getSelection().modifySelection => @moveToBeginningOfWord()
+    @getSelections().forEach (selection) =>
+      selection.modifySelection => @moveCursorToBeginningOfWord(selection.cursor)
 
   selectToEndOfWord: ->
-    @getSelection().modifySelection => @moveToEndOfWord()
+    @getSelections().forEach (selection) =>
+      selection.modifySelection => @moveCursorToEndOfWord(selection.cursor)
 
   deleteToBeginningOfWord: ->
     @getEditor().mutateSelectedText (selection) =>
       if selection.isEmpty()
-        selection.modifySelection => @moveToBeginningOfWord()
+        selection.modifySelection => @moveCursorToBeginningOfWord(selection.cursor)
       selection.deleteSelectedText()
 
   deleteToEndOfWord: ->
     @getEditor().mutateSelectedText (selection) =>
       if selection.isEmpty()
-        selection.modifySelection => @moveToEndOfWord()
+        selection.modifySelection => @moveCursorToEndOfWord(selection.cursor)
       selection.deleteSelectedText()
