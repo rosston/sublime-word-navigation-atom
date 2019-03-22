@@ -1,7 +1,7 @@
 {
   "name": "sublime-word-navigation",
   "main": "./lib/sublime-word-navigation",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Sublime Text and native-style word navigation in Atom with shortcuts.",
   "activationCommands": {},
   "repository": "https://github.com/rosston/sublime-word-navigation-atom",
