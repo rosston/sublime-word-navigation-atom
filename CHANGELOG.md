@@ -1,3 +1,6 @@
+## 0.2.1
+* Fixed bug where word navigation threw exceptions in docked editors (e.g., git commit)
+
 ## 0.2.0
 * Added support for multiple cursors
 
