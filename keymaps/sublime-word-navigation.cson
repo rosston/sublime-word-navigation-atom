@@ -29,3 +29,39 @@
   'ctrl-shift-right': 'sublime-word-navigation:select-to-end-of-word'
   'ctrl-backspace': 'sublime-word-navigation:delete-to-beginning-of-word'
   'ctrl-delete': 'sublime-word-navigation:delete-to-end-of-word'
+
+# Restore default commands in editors within a dock (e.g., git commit message
+# editor). `atom.workspace.getActiveTextEditor()` doesn't return editors within
+# a dock, and I don't see another way to disable the plugin in such editors
+# while keeping the keybindings intact.
+'atom-dock atom-text-editor:not([mini])':
+  'alt-b': 'editor:move-to-beginning-of-word'
+  'alt-f': 'editor:move-to-end-of-word'
+  'alt-B': 'editor:select-to-beginning-of-word'
+  'alt-F': 'editor:select-to-end-of-word'
+  'alt-h': 'editor:delete-to-beginning-of-word'
+  'alt-d': 'editor:delete-to-end-of-word'
+
+'.platform-darwin atom-dock atom-text-editor:not([mini])':
+  'alt-left': 'editor:move-to-beginning-of-word'
+  'alt-right': 'editor:move-to-end-of-word'
+  'alt-shift-left': 'editor:select-to-beginning-of-word'
+  'alt-shift-right': 'editor:select-to-end-of-word'
+  'alt-backspace': 'editor:delete-to-beginning-of-word'
+  'alt-delete': 'editor:delete-to-end-of-word'
+
+'.platform-linux atom-dock atom-text-editor:not([mini])':
+  'ctrl-left': 'editor:move-to-beginning-of-word'
+  'ctrl-right': 'editor:move-to-end-of-word'
+  'ctrl-shift-left': 'editor:select-to-beginning-of-word'
+  'ctrl-shift-right': 'editor:select-to-end-of-word'
+  'ctrl-backspace': 'editor:delete-to-beginning-of-word'
+  'ctrl-delete': 'editor:delete-to-end-of-word'
+
+'.platform-win32 atom-dock atom-text-editor:not([mini])':
+  'ctrl-left': 'editor:move-to-beginning-of-word'
+  'ctrl-right': 'editor:move-to-end-of-word'
+  'ctrl-shift-left': 'editor:select-to-beginning-of-word'
+  'ctrl-shift-right': 'editor:select-to-end-of-word'
+  'ctrl-backspace': 'editor:delete-to-beginning-of-word'
+  'ctrl-delete': 'editor:delete-to-end-of-word'
